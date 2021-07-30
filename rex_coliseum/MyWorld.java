@@ -38,6 +38,7 @@ public class MyWorld extends World
     }
     public void act(){
         aniadir_rivales();
+        //Greenfoot.playSound("fondo.wav");
     }
     public int getRandomNumber(int start, int end){
         int normal = Greenfoot.getRandomNumber(end-start+1);
