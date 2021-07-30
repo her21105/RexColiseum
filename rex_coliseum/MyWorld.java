@@ -13,6 +13,7 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    //variables
     private counter score;
     private counter level;
     
@@ -27,6 +28,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
         
+        //definir el inicio del mapa 
         score = new counter("Score: ");
         raptor = new Velociraptor();
         addObject(raptor, 270,275);
@@ -37,22 +39,31 @@ public class MyWorld extends World
         
     }
     public void act(){
+        //añadir rivales
         aniadir_rivales();
         //Greenfoot.playSound("fondo.wav");
     }
     public int getRandomNumber(int start, int end){
+        //función random
         int normal = Greenfoot.getRandomNumber(end-start+1);
         return normal+start;
     }
     public void aumentar_puntuacion(int valor){
+        //añadir valor
         score.add(valor);
     }
     public void disminuir_num_rivales(){
+        //disminuir el valor de num_rivales
         num_rivales--;
     }
     public void aniadir_rivales(){
+        //generador de enemigos
+            //if para decir si no hay enemigos
         if(num_rivales == 0){
+            //random number
             int lado = getRandomNumber(0,4);
+            //lados
+            // 0 = izquierda, 1 = arriba, 2= derecha, 3= abajo
             if (lado == 0){
                 int numero = getRandomNumber(0,3);
                 if(numero == 0){

@@ -27,14 +27,17 @@ public class Bullet extends Actor
         //comer();
         Adelante_derecha();
         
-        
+        //eliminar al tocar la orilla
         if( getX() >= getWorld().getWidth() - 1 ){
+            
             MyWorld juego = (MyWorld) getWorld();
             juego.removeObject(this);
             juego.aumentar_puntuacion(10);
             juego.disminuir_num_rivales();
             //juego.aumentar_num_adelantamientos();
+            // sistema de aumento de velocidad
             nuevo++;
+            
             if(nuevo >= 19){
                 nuevo = 19;
             }
@@ -42,7 +45,7 @@ public class Bullet extends Actor
     }
     private int pause = 20;
     public void Adelante_derecha(){
-        
+            //movimiento
            if(pause>0){
                pause--;
            }else{

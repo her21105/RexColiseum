@@ -10,6 +10,7 @@ public class Velociraptor extends Actor
 {
     public Velociraptor()
     {
+        //cambio de tamaño de imagen
         GreenfootImage myImage = getImage();
         int myNewHeight = (int)myImage.getHeight();
         int myNewWidth = (int)myImage.getWidth();
@@ -26,9 +27,10 @@ public class Velociraptor extends Actor
     }
     private int pause = 50;
     public void mover(){
-        
+        //movimiento con cordenadas
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(),getY()+60);
+            //deterner todo el juego por 50
             Greenfoot.delay(50);
             
         }
